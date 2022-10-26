@@ -1,0 +1,11 @@
+f=open("anmol.txt","w")
+f.write("anamol dhakal lyang")
+f.close()
+
+replaceWord=input("replace: ")
+replacedBy=input("by: ")
+f=open("anmol.txt","r")
+a=(f.read()).replace(replaceWord,replacedBy)
+f=open("anmol.txt","w")
+f.write(a)
+f.close()
