@@ -1,15 +1,14 @@
 class Library():
-    def __init__(self,bookList,book):
-        self._bookList=bookList
-        # self.add={}
+    def __init__(self,book,name):
+        self._bookList=['a','b','c']
         self.book=book
-
+        self._name=name
 
 class Additional_Function(Library):
-    def __init__(self, bookList, book,name):
-        self._name = name
+    def __init__(self,book,name):
+        self.var_tempx = None
         self._lendrecord = {}
-        super().__init__(bookList, book)
+        super().__init__(book,name)
         
     def _lendBooks(self):
         if book not in self._bookList:
@@ -20,27 +19,61 @@ class Additional_Function(Library):
             print("Successfully lend!")
 
     def _returnBooks(self):
-        self._bookList.append(book)
+        # print(self.var_tempx)
+        # self._bookList.append(self.book)
+        print(self._lendrecord)
+        # (self._lendrecord).pop(self._lendrecord[self._name])
         print("Book Returned!!!")
+        
 
 
 class Display(Additional_Function,Library):
-    def __init__(self, bookList, book, name):
-        super().__init__(bookList, book, name)
+    def __init__(self, book, name):
+        super().__init__(book, name)
     def _addBooks(self,book):
         self._bookList.append(book)
         print("Book successfully added")
     def _showBooks(self):
         for i in self._bookList:
             print(i)
-        for j in self._lendrecord:
-            print(j)
+        print("Lend Record",self._lendrecord)
 
 
 if __name__=='__main__':
-    raja=Library(['a','b','c'],'book')
-    af = Additional_Function(['a','b','c'],'book','antony')
-    dd = Display(['a','b','c'],'book','antony')
+    
+    
+    raja=Library('book','Antony')
+    af = Additional_Function(object,'Antony')
+    dd = Display('book','Antony')
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     while(True):
         print('''
             1. SHOW BOOKS
