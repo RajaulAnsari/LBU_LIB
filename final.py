@@ -1,8 +1,9 @@
 class Library():
     def __init__(self,bookList,book):
         self._bookList=bookList
-        self.add={}
+        # self.add={}
         self.book=book
+
 
 class Additional_Function(Library):
     def __init__(self, bookList, book,name):
@@ -12,7 +13,7 @@ class Additional_Function(Library):
         
     def _lendBooks(self):
         if book not in self._bookList:
-            print(f"{self.book} is not in the Library!")
+            print(f"{book} is not in the Library!")
         else:
             indx = int((self._bookList).index(book))            
             self._lendrecord[self._name] = self._bookList.pop(indx)
@@ -21,6 +22,7 @@ class Additional_Function(Library):
     def _returnBooks(self):
         self._bookList.append(book)
         print("Book Returned!!!")
+
 
 class Display(Additional_Function,Library):
     def __init__(self, bookList, book, name):
@@ -33,6 +35,7 @@ class Display(Additional_Function,Library):
             print(i)
         for j in self._lendrecord:
             print(j)
+
 
 if __name__=='__main__':
     raja=Library(['a','b','c'],'book')
@@ -55,9 +58,9 @@ if __name__=='__main__':
             dd._addBooks(book)
         elif(CHOICE=='3'):
             book=input("Enter name of book u want to lend: ")
-            af._lendBooks()
+            dd._lendBooks()
         elif(CHOICE=='4'):
             book=input("Enter name of book u want to return: ")
-            raja._returnBooks()
+            af._returnBooks()
         else:
             print("INVALID CHOICE!!!")
