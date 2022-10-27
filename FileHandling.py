@@ -1,5 +1,5 @@
 f=open("anmol.txt","w")
-f.write("anamol dhakal lyang")
+f.write("anamol dhakal lang")
 f.close()
 
 replaceWord=input("replace: ")
