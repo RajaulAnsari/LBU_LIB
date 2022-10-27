@@ -19,8 +19,6 @@ class Additional_Function(Library):
             print("Successfully lend!")
 
     def _returnBooks(self):
-        # print(self.var_tempx)
-        # self._bookList.append(self.book)
         print(self._lendrecord)
         self._lendrecord.pop(self._name)
         self._bookList.append(book)
