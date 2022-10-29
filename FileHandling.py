@@ -1,11 +1,55 @@
-f=open("anmol.txt","w")
-f.write("anamol dhakal lang")
-f.close()
+FILE_PATH = "/home/exzyle/ProjectMD/Ongoing/lib.txt"
 
-replaceWord=input("replace: ")
-replacedBy=input("by: ")
-f=open("anmol.txt","r")
-a=(f.read()).replace(replaceWord,replacedBy)
-f=open("anmol.txt","w")
-f.write(a)
-f.close()
+def details():
+    book=input("book u want to add: ")
+    f=open(FILE_PATH,"a")
+    f.write(book+"\n")
+    f.close()
+
+def show():
+    f=open(FILE_PATH,"r")
+    a=f.readlines()
+    for i in a:
+        print(i)
+    f.close()
+
+def lend():
+    book=input("which book do u want: ")
+    name=input("enter your name: ")
+    lname=f"{book} : Lended BY: {name}"
+    f=open(FILE_PATH,"r")
+    word=(f.read()).replace(book,lname)
+    f=open(FILE_PATH,"w")
+    f.write(word)
+    f.close()
+
+def Return():
+    book=input("Enter the book u want to return: ")
+    name=input("enter your name: ")
+    name1=f"{book} : Lended BY: {name}"
+    f=open(FILE_PATH,"r")
+    word=(f.read()).replace(name1,book)
+    f=open(FILE_PATH,"w")
+    f.write(word)
+    f.close()
+    
+while(True):
+    print("""
+        1. add details
+        2. show
+        3. lend
+        4. Return
+""")
+
+    choice=input("Enter choice: ")
+    if (choice=="1"):
+        details()
+    elif (choice=="2"):
+        print("Book details here:\n")
+        show()
+    elif (choice=="3"):
+        lend()
+    elif (choice=="4"):
+        Return()
+    else:
+        print("invalid!!!")
