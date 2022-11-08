@@ -70,28 +70,3 @@ if __name__=='__main__':
     li = Library(book_name,user_name)                                       #class with its objects
     af = Additional_Function(object,user_name)                              #inheriting another class object
     dd = Display(book_name,user_name)
-    
-    while(True):
-        
-        print('''
-              1. SHOW BOOKS
-              2. ADD BOOKS
-              3. LEND BOOKS
-              4. RETURN BOOKS
-              5. Exit''')
-        
-        CHOICE=input("ENTER YOUR CHOICE: ")
-        if CHOICE not in ['1','2','3','4']:
-            continue
-        if(CHOICE=='1'):
-            dd._showBooks()
-        elif(CHOICE=='2'):
-            dd._addBooks()
-        elif(CHOICE=='3'):
-            af._lendBooks()
-        elif(CHOICE=='4'):
-            af._returnBooks()
-        elif(CHOICE=='5'):
-            exit()                                                          #exiting program built-in function
-        else:
-            print("INVALID CHOICE!!!")

@@ -62,20 +62,32 @@ class Display(Library):
         new=customtkinter.CTk()
         new.geometry("400x600")
         new.title("New Window")
+        
+        
         label1 = customtkinter.CTkLabel(master=new,width=120,text="Library Record",height=25,fg_color=("white", "black"),corner_radius=8)
         label1.pack(padx=20, pady=10)
+        
         textbox1 = customtkinter.CTkTextbox(new,height=200,width=200)
         textbox1.pack(pady=20)
+        
         text_file=open(r'C:\Users\User\Desktop\Library GUI\LBU_LIB-main\lib.txt','r')
         content = text_file.read()
+        
         textbox1.insert("0.0",content)
+        
+        
         label1 = customtkinter.CTkLabel(master=new,width=120,text="Lending Record",height=25,fg_color=("white", "black"),corner_radius=8)
         label1.pack(padx=20, pady=10)
+        
         textbox2 = customtkinter.CTkTextbox(new)
         textbox2.pack(pady=20)
+        
         text_file2=open(r'C:\Users\User\Desktop\Library GUI\LBU_LIB-main\lendrec.txt','r')
         content2 = text_file2.read()
+        
         textbox2.insert("0.0",content2)
+        
+        
         new.mainloop()
 
 def submit():
