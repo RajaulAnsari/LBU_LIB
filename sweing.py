@@ -26,12 +26,12 @@ class Additional_Function(Library):                                         #use
         
     def _lendBooks(self):                                                  
         
-        if book_name not in self._bookList:
-            print(f"{book_name} is not in the Library!")
+        if book_name.get() not in self._bookList:
+            print(f"{book_name.get()} is not in the Library!")
         
         else:
-            indx = int((self._bookList).index(book_name))                   #abstraction of data from list 
-            self._lendrecord[user_name] = self._bookList.pop(indx)                        
+            indx = int((self._bookList).index(book_name.get()))                   #abstraction of data from list 
+            self._lendrecord[user_name.get()] = self._bookList.pop(indx)                        
             
             book_add(str(self._lendrecord),FILE_PATH_N)
             replace(((list(self._lendrecord.values()))[0]),FILE_PATH)
@@ -44,7 +44,7 @@ class Additional_Function(Library):                                         #use
         self._lendrecord=booklst_data
         (open(FILE_PATH_N,"r")).close() 
         
-        book_add(book_name,FILE_PATH)                                       #use case of custom library
+        book_add(book_name.get(),FILE_PATH)                                       #use case of custom library
         replace(self._lendrecord,FILE_PATH_N)                               #use case of custom library
         
         print("Book Returned!!!")
@@ -56,7 +56,6 @@ class Display(Library):
         
     def _addBooks(self):
         book_add(book_name.get(),FILE_PATH)
-        book_add(user_name.get(),FILE_PATH_N)
         print("Book successfully added")
         
     def _showBooks(self):
@@ -112,25 +111,6 @@ if __name__=='__main__':
     af = Additional_Function(object,user_name)                              #inheriting another class object
     dd = Display(book_name,user_name)
 
-# def show_books():
-#     new=customtkinter.CTk()
-#     new.geometry("400x600")
-#     new.title("New Window")
-#     label1 = label = customtkinter.CTkLabel(master=new,width=120,text="Library Record",height=25,fg_color=("white", "black"),corner_radius=8)
-#     label1.pack(padx=20, pady=10)
-#     textbox1 = customtkinter.CTkTextbox(new,height=200,width=200)
-#     textbox1.pack(pady=20)
-#     text_file=open(r'C:\Users\User\Desktop\Library GUI\LBU_LIB-main\lib.txt','r')
-#     content = text_file.read()
-#     textbox1.insert("0.0",content)
-#     label1 = label = customtkinter.CTkLabel(master=new,width=120,text="Lending Record",height=25,fg_color=("white", "black"),corner_radius=8)
-#     label1.pack(padx=20, pady=10)
-#     textbox2 = customtkinter.CTkTextbox(new)
-#     textbox2.pack(pady=20)
-#     text_file2=open(r'C:\Users\User\Desktop\Library GUI\LBU_LIB-main\lendrec.txt','r')
-#     content2 = text_file2.read()
-#     textbox2.insert("0.0",content2)
-#     new.mainloop()
 
 def button_function():
     pass
@@ -155,10 +135,10 @@ button.pack(padx=20, pady=10,anchor=tk.CENTER)
 button = customtkinter.CTkButton(master=app, text="Add Books", command=dd._addBooks)
 button.pack(padx=20, pady=10)
 
-button = customtkinter.CTkButton(master=app, text="Lend Books", command=button_function)
+button = customtkinter.CTkButton(master=app, text="Lend Books", command=af._lendBooks)
 button.pack(padx=20, pady=10)
 
-button = customtkinter.CTkButton(master=app, text="Return Books", command=button_function)
+button = customtkinter.CTkButton(master=app, text="Return Books", command=af._returnBooks)
 button.pack(padx=20, pady=10)
 
 button = customtkinter.CTkButton(master=app, text="Exit", command=exit_window)
