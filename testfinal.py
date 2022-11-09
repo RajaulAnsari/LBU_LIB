@@ -3,13 +3,13 @@ import customtkinter
 import tkinter as tk
 
 #Importing Functions From Other Py File 
-# from FileHandling import *
+from FileHandling import *
 
-from LBULIB import *
+# from LBULIB import *
 
 #Universal File-Path Location For Necessary Data
-FILE_PATH = "/home/exzyle/ProjectMD/Ongoing/lib.txt"
-FILE_PATH_N = "/home/exzyle/ProjectMD/Ongoing/lendrec.txt"  
+FILE_PATH = "/home/exzyle/gitcloneproject/LBU_LIB/lib.txt"
+FILE_PATH_N = "/home/exzyle/gitcloneproject/LBU_LIB/lendrec.txt"  
 
 #THEMING THE GUI
 customtkinter.set_appearance_mode("System")  # Modes: system (default), light, dark
@@ -31,6 +31,58 @@ user_name=tk.StringVar()
 
 b_name = book_name.get()
 u_name = user_name.get()
+
+#Class Section 
+class Library():
+    
+    def __init__(self,book_name,user_name):
+        
+        booklst_data=(open(FILE_PATH,"r")).read() 
+        self._bookList=list(booklst_data.split('\n'))                    
+        (open(FILE_PATH,"r")).close()
+        
+        self.book = book_name
+        self._name = user_name
+
+class Additional_Function(Library):                                       
+    
+    def __init__(self, book_name, user_name):
+        self._lendrecord = {}
+        super().__init__(book_name, user_name)
+        
+    def _lendBooks(self):                                                  
+        
+        if book_name not in self._bookList:
+            print(f"{book_name} is not in the Library!")
+        
+        else:
+            indx = int((self._bookList).index(book_name))                   
+            self._lendrecord[user_name] = self._bookList.pop(indx)                        
+            
+            book_add(str(self._lendrecord),FILE_PATH_N)
+            replace(((list(self._lendrecord.values()))[0]),FILE_PATH)
+            
+            print("Successfully lend!")
+
+    def _returnBooks(self):
+        
+        booklst_data=(open(FILE_PATH_N,"r")).read()                         
+        self._lendrecord=booklst_data
+        (open(FILE_PATH_N,"r")).close() 
+        
+        book_add(book_name,FILE_PATH)                                       
+        replace(self._lendrecord,FILE_PATH_N)                               
+        
+        print("Book Returned!!!")
+
+class Display(Library):
+    
+    def __init__(self, book_name,user_name):
+        super().__init__(book_name,user_name)
+        
+    def _addBooks(self):
+        book_add(book_name,FILE_PATH)
+        print("Book successfully added")
 
 #Function Show Book
 def Show_Book():
@@ -59,17 +111,26 @@ def Show_Book():
     Back_Button = customtkinter.CTkButton(master=app, text="Back", command=lambda:[CLEAR(),GUI_USER_HOME()])
     Back_Button.grid(row=4, column=1, padx=130, pady=20) 
         
-        
+
 def Use_Case(use_case):
-    if Use_Case == "Add Books":
-        Use_Case = dd._addBooks()
-    elif Use_Case == "Lend Books":
-        Use_Case = af._lendBooks()
-    elif Use_Case == "Return Books":
-        Use_Case = af._returnBooks()
+
+    if __name__=='__main__':
+        book_name = b_name
+        user_name = u_name
+        
+        li = Library(book_name.get(),user_name.get())                                       
+        af = Additional_Function(object,user_name.get())                              
+        dd = Display(book_name.get(),user_name.get())
+    
+    if use_case == "Add Books":
+        dd._addBooks()
+    elif use_case == "Lend Books":
+        af._lendBooks()
+    elif use_case == "Return Books":
+        af._returnBooks()
         
 #FUNCTION DEFININNG FOR GUI USER-INPUT
-def GUI_USER_INPUT():
+def GUI_USER_INPUT(user_case):
     
     #Main GUI --> Asking User Input
     Book_Name_Title=customtkinter.CTkLabel(master=app,width=120,text="Enter Book Name",height=25,fg_color=("white", "black"),corner_radius=8)
@@ -84,7 +145,7 @@ def GUI_USER_INPUT():
     Name_Entry = customtkinter.CTkEntry(master=app,textvariable=user_name)
     Name_Entry.grid(row=3, column=1, padx=0, pady=0)
     
-    Submit_Button = customtkinter.CTkButton(master=app, text="SUBMIT", command=Use_Case())
+    Submit_Button = customtkinter.CTkButton(master=app, text="SUBMIT", command=lambda:[Use_Case(user_case)])
     Submit_Button.grid(row=4, column=1, padx=130, pady=30)
     
     Back_Button = customtkinter.CTkButton(master=app, text="Back", command=lambda:[CLEAR(),GUI_USER_HOME()])
