@@ -7,29 +7,29 @@ FILE_PATH_N = "/home/exzyle/ProjectMD/Ongoing/lendrec.txt"                 #univ
 
 class Library():
     
-    def __init__(self,book_name,user_name):
+    def __init__(self,book_name.get(),user_name.get()):
         
         booklst_data=(open(FILE_PATH,"r")).read()                           #txt file data into list form
         self._bookList=list(booklst_data.split('\n'))                    
         (open(FILE_PATH,"r")).close()
         
-        self.book = book_name
-        self._name = user_name
+        self.book = book_name.get()
+        self._name = user_name.get()
 
 class Additional_Function(Library):                                         #use case of inheritance 
     
-    def __init__(self, book_name, user_name):
+    def __init__(self, book_name.get(), user_name.get()):
         self._lendrecord = {}
-        super().__init__(book_name, user_name)
+        super().__init__(book_name.get(), user_name.get())
         
     def _lendBooks(self):                                                  
         
-        if book_name not in self._bookList:
-            print(f"{book_name} is not in the Library!")
+        if book_name.get() not in self._bookList:
+            print(f"{book_name.get()} is not in the Library!")
         
         else:
-            indx = int((self._bookList).index(book_name))                   #abstraction of data from list 
-            self._lendrecord[user_name] = self._bookList.pop(indx)                        
+            indx = int((self._bookList).index(book_name.get()))                   #abstraction of data from list 
+            self._lendrecord[user_name.get()] = self._bookList.pop(indx)                        
             
             book_add(str(self._lendrecord),FILE_PATH_N)
             replace(((list(self._lendrecord.values()))[0]),FILE_PATH)
@@ -42,18 +42,18 @@ class Additional_Function(Library):                                         #use
         self._lendrecord=booklst_data
         (open(FILE_PATH_N,"r")).close() 
         
-        book_add(book_name,FILE_PATH)                                       #use case of custom library
+        book_add(book_name.get(),FILE_PATH)                                       #use case of custom library
         replace(self._lendrecord,FILE_PATH_N)                               #use case of custom library
         
         print("Book Returned!!!")
 
 class Display(Library):
     
-    def __init__(self, book_name,user_name):
-        super().__init__(book_name,user_name)
+    def __init__(self, book_name.get(),user_name.get()):
+        super().__init__(book_name.get(),user_name.get())
         
     def _addBooks(self):
-        book_add(book_name,FILE_PATH)
+        book_add(book_name.get(),FILE_PATH)
         print("Book successfully added")
     
     def _showBooks(self):
@@ -64,9 +64,9 @@ class Display(Library):
 
 
 if __name__=='__main__':
-    book_name = b_name
-    user_name = u_name
+    book_name.get() = b_name
+    user_name.get() = u_name
     
-    li = Library(book_name,user_name)                                       #class with its objects
-    af = Additional_Function(object,user_name)                              #inheriting another class object
-    dd = Display(book_name,user_name)
+    li = Library(book_name.get(),user_name.get())                                       #class with its objects
+    af = Additional_Function(object,user_name.get())                              #inheriting another class object
+    dd = Display(book_name.get(),user_name.get())

@@ -52,16 +52,15 @@ class Additional_Function(Library):
         
     def _lendBooks(self):                                                  
         
-        if book_name not in self._bookList:
-            print(f"{book_name} is not in the Library!")
+        if book_name.get() not in self._bookList:
+            print(f"{book_name.get()} is not in the Library!")
         
         else:
-            indx = int((self._bookList).index(book_name))                   
-            self._lendrecord[user_name] = self._bookList.pop(indx)                        
+            indx = int((self._bookList).index(book_name.get()))                   
+            self._lendrecord[user_name.get()] = self._bookList.pop(indx)                        
             
             book_add(str(self._lendrecord),FILE_PATH_N)
             replace(((list(self._lendrecord.values()))[0]),FILE_PATH)
-            
             print("Successfully lend!")
 
     def _returnBooks(self):
@@ -70,7 +69,7 @@ class Additional_Function(Library):
         self._lendrecord=booklst_data
         (open(FILE_PATH_N,"r")).close() 
         
-        book_add(book_name,FILE_PATH)                                       
+        book_add(book_name.get(),FILE_PATH)                                       
         replace(self._lendrecord,FILE_PATH_N)                               
         
         print("Book Returned!!!")
@@ -81,7 +80,7 @@ class Display(Library):
         super().__init__(book_name,user_name)
         
     def _addBooks(self):
-        book_add(book_name,FILE_PATH)
+        book_add(book_name.get(),FILE_PATH)
         print("Book successfully added")
 
 #Function Show Book
@@ -118,9 +117,9 @@ def Use_Case(use_case):
         book_name = b_name
         user_name = u_name
         
-        li = Library(book_name.get(),user_name.get())                                       
-        af = Additional_Function(object,user_name.get())                              
-        dd = Display(book_name.get(),user_name.get())
+        li = Library(book_name,user_name)                                       
+        af = Additional_Function(object,user_name)                              
+        dd = Display(book_name,user_name)
     
     if use_case == "Add Books":
         dd._addBooks()
