@@ -29,10 +29,11 @@ def CLEAR():
 book_name=tk.StringVar()
 user_name=tk.StringVar()
 
+#Getting The String Into Variable
 b_name = book_name.get()
 u_name = user_name.get()
 
-#Class Section 
+#Defining Class For Various Section
 class Library():
     
     def __init__(self,book_name,user_name):
@@ -110,7 +111,7 @@ def Show_Book():
     Back_Button = customtkinter.CTkButton(master=app, text="Back", command=lambda:[CLEAR(),GUI_USER_HOME()])
     Back_Button.grid(row=4, column=1, padx=130, pady=20) 
         
-
+#User-Choice Function 
 def Use_Case(use_case):
 
     if __name__=='__main__':
@@ -175,5 +176,5 @@ def GUI_USER_HOME():
 
 GUI_USER_HOME()
 
-
+#Looping The GUI
 app.mainloop()
