@@ -1,6 +1,6 @@
 [PyPI](https://pypi.org/project/caliz/)
 
-# MAS LIBRARY MANAGEMENT SYSTEM FOR THE LEEDS BECKETT UNIVERSITY WITH GUI
+# MAS LIBRARY MANAGEMENT SYSTEM FOR LBU WITH GUI
 
 ![](images/calculator.png)
 | _`LBU_LIB_V5.py` Demo View_
