@@ -1,6 +1,6 @@
 [PyPI](https://pypi.org/project/caliz/)
 
-# LBU_LIB Management System
+# LBU_LIB MANAGEMENT SYSTEM
 
 ![](images/1.png)
 | _`LBU_LIB_V5.py` Demo View First_
@@ -32,7 +32,7 @@ pip3 install caliz
 
 ## Use-HowTO
 
-After installing **CALIZ** go to python in terminal and import calculator from caliz library, 
+After installing **LBULIB** go to python in terminal and import calculator from caliz library, 
 i.e. --> **from caliz import calculator**
 and the calculator will be shown to you.
 
@@ -44,4 +44,4 @@ The **official** documentation for CustomTkinter can be found in the Wiki Tab he
 
 **--> [Documentation](https://github.com/TomSchimansky/CustomTkinter/wiki)**.
 
-Thank You From MAS.
+Thank You From LBU-GRADERS.
