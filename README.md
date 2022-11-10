@@ -3,7 +3,7 @@
 # MAS LIBRARY MANAGEMENT SYSTEM FOR THE LEEDS BECKETT UNIVERSITY WITH GUI
 
 ![](images/calculator.png)
-| _`calculator.py` Demo View_
+| _`LBU_LIB_V5.py` Demo View_
 
 A professional visual look has been implemented to this library management system with the use of the custom tkinter library. The system is built on the concept of Object Oriented Programming which is completely done in
 python. The UI is intuitive and is easy to grasp. As such the program is very user friendly. You can use the system appearance or the manually set mode ('light', 'dark'), whichever you prefer, and you'll get a consistent appearance, Windows, macOS, and Linux all have a fresh, modern look.
