@@ -2,8 +2,14 @@
 
 # MAS LIBRARY MANAGEMENT SYSTEM FOR LBU WITH GUI
 
-![](images/calculator.png)
-| _`LBU_LIB_V5.py` Demo View_
+![](images/1.png)
+| _`LBU_LIB_V5.py` Demo View First_
+
+![](images/2.png)
+| _`LBU_LIB_V5.py` Demo View Second_
+
+![](images/3.png)
+| _`LBU_LIB_V5.py` Demo View Third_
 
 A professional visual look has been implemented to this library management system with the use of the custom tkinter library. The system is built on the concept of Object Oriented Programming which is completely done in
 python. The UI is intuitive and is easy to grasp. As such the program is very user friendly. You can use the system appearance or the manually set mode ('light', 'dark'), whichever you prefer, and you'll get a consistent appearance, Windows, macOS, and Linux all have a fresh, modern look.
