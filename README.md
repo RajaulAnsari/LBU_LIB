@@ -1,6 +1,6 @@
 [PyPI](https://pypi.org/project/caliz/)
 
-# MAS LIBRARY MANAGEMENT SYSTEM FOR LBU WITH GUI
+# LBU_LIB Management System
 
 ![](images/1.png)
 | _`LBU_LIB_V5.py` Demo View First_
