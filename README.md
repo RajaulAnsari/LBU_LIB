@@ -25,7 +25,7 @@ For installing required packages
 ```
 pip3 install customtkinter
 pip3 install tkinter or pip3 install tk
-pip3 install caliz
+pip3 install lbulib
 ```
 **Update existing installation:** ```pip3 install caliz --upgrade```\
 (update as often as possible because this library is under active development)
