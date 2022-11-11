@@ -27,13 +27,13 @@ pip3 install customtkinter
 pip3 install tkinter or pip3 install tk
 pip3 install lbulib
 ```
-**Update existing installation:** ```pip3 install caliz --upgrade```\
+**Update existing installation:** ```pip3 install lbulib --upgrade```\
 (update as often as possible because this library is under active development)
 
 ## Use-HowTO
 
-After installing **LBULIB** go to python in terminal and import calculator from caliz library, 
-i.e. --> **from caliz import calculator**
+After installing **LBULIB** go to python in terminal and import lib from lbulib library, 
+i.e. --> **from lbulib import lib**
 and the calculator will be shown to you.
 
 If you need to get more info about CustomTkinter Go through the **Documentation** provided below,
