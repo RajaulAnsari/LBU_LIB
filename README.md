@@ -34,7 +34,7 @@ pip3 install lbulib
 
 After installing **LBULIB** go to python in terminal and import lib from lbulib library, 
 i.e. --> **from lbulib import lib**
-and the calculator will be shown to you.
+and the lib will be shown to you.
 
 If you need to get more info about CustomTkinter Go through the **Documentation** provided below,
 
